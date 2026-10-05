@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>书架 · 舒适阅读</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; font-family: "Kaiti SC","STKaiti","KaiTi","FangSong",serif;
+  background: linear-gradient(160deg, #f6efe2 0%, #efe6d2 100%);
+  color: #3d3427; display: flex; flex-direction: column; align-items: center;
+  padding: 3rem 1.2rem 4rem;
+}
+h1 { font-size: 2.2rem; letter-spacing: .35em; margin: 0 0 .4rem; font-weight: 700; }
+.sub { color: #8a7f6d; letter-spacing: .15em; margin-bottom: 3rem; font-size: .95rem; }
+.shelf { display: flex; gap: 2.2rem; flex-wrap: wrap; justify-content: center; max-width: 860px; }
+.book {
+  width: 280px; background: #fbf7ec; border: 1px solid #e2d6bd; border-radius: 14px;
+  padding: 1.8rem 1.5rem 1.4rem; text-decoration: none; color: inherit;
+  box-shadow: 0 8px 24px rgba(93,72,40,.12); transition: transform .2s, box-shadow .2s;
+  display: flex; flex-direction: column;
+}
+.book:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(93,72,40,.2); }
+.book .tag { font-size: .72rem; color: #a0855a; letter-spacing: .3em; margin-bottom: .8rem; }
+.book h2 { font-size: 1.28rem; margin: 0 0 .45rem; line-height: 1.5; }
+.book .en { font-size: .78rem; color: #8a7f6d; font-style: italic; margin-bottom: .8rem; }
+.book .author { font-size: .9rem; color: #6d624f; margin-bottom: 1.1rem; }
+.book .desc { font-size: .83rem; color: #7a705c; line-height: 1.8; flex: 1; }
+.book .open {
+  margin-top: 1.2rem; text-align: center; padding: .55em 0; border-radius: 999px;
+  background: #8a5a2b; color: #fff; font-size: .92rem; letter-spacing: .2em;
+}
+footer { margin-top: 3.4rem; font-size: .78rem; color: #8a7f6d; line-height: 1.9; text-align: center; max-width: 640px; }
+</style>
+</head>
+<body>
+<h1>书 架</h1>
+<div class="sub">— 舒 适 阅 读 —</div>
+<div class="shelf">
+  <a class="book" href="宗教改革/">
+    <div class="tag">史学 · 宗教改革</div>
+    <h2>宗教改革：一部历史</h2>
+    <div class="en">The Reformation: A History</div>
+    <div class="author">迪尔梅德·麦卡洛克 著 · 全书中译</div>
+    <div class="desc">16世纪欧洲宗教改革的完整叙事：旧教会、希望与恐惧、新教与天主教的对抗、分裂的欧洲、生活模式——正文、注释与附录全译，附全书术语表。</div>
+    <div class="open">开 始 阅 读</div>
+  </a>
+  <a class="book" href="白莲教战争/">
+    <div class="tag">清史 · 嘉庆朝</div>
+    <h2>白莲教战争：晚清帝国的叛乱与镇压</h2>
+    <div class="en">The White Lotus War: Rebellion and Suppression in Late Imperial China</div>
+    <div class="author">戴英聪 著 · 全书中译</div>
+    <div class="desc">1796—1805年川楚陕白莲教战争全史：叛乱、泥潭、改革、逆转、终局，正规军与非正规军，耗费——正文与全部注释译出，引文附文言原文，附术语表。</div>
+    <div class="open">开 始 阅 读</div>
+  </a>
+</div>
+<footer>
+  两书均为个人学习研究用途的完整中译，译文仅供阅读参考；<br>
+  阅读页内置目录、四种主题、字号调节、全书检索与阅读进度记忆，手机与电脑均可使用。<br>
+  如版权方要求，相关译本将立即撤下。
+</footer>
+</body>
+</html>
