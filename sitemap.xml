@@ -15,4 +15,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://xuanlanxingkongxia.github.io/books/%E8%83%A1%E6%96%AF%E9%9D%A9%E5%91%BD/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
