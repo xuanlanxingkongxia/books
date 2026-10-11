@@ -150,6 +150,25 @@ article h2.notes-sec ~ p {
   text-indent: 0; text-align: left; margin: .45em 0;
 }
 
+/* ---------- 插图 ---------- */
+article figure { margin: 1.8em auto; text-align: center; max-width: 100%; }
+article figure img {
+  max-width: 100%; height: auto; display: block; margin: 0 auto;
+  border: 1px solid var(--panel-border); border-radius: 4px;
+  background: #fff; cursor: zoom-in; box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+article figure figcaption {
+  font-family: var(--font-kai); font-size: .85em; color: var(--muted);
+  margin: .55em auto 0; line-height: 1.65; text-align: center; max-width: 40em;
+}
+#img-viewer {
+  position: fixed; inset: 0; z-index: 40; display: none;
+  align-items: center; justify-content: center; cursor: zoom-out;
+  background: rgba(12,12,14,.88);
+}
+#img-viewer.open { display: flex; }
+#img-viewer img { max-width: 94vw; max-height: 92vh; border-radius: 4px; background: #fff; }
+
 #chapter-end { max-width: var(--mw); margin: 4rem auto 0; text-align: center; }
 #chapter-end .end-mark { color: var(--muted); letter-spacing: .5em; margin-bottom: 1.4rem; font-size: .85em; }
 #chapter-end .nav-btns { display: flex; justify-content: center; gap: 1rem; }
@@ -254,6 +273,7 @@ article h2.notes-sec ~ p {
 </div>
 
 <div id="fn-pop"></div>
+<div id="img-viewer"><img id="img-viewer-img" src="" alt=""></div>
 <div id="search-nav">
   <span id="sn-info"></span>
   <button id="sn-prev" title="上一处">‹</button>
@@ -418,6 +438,20 @@ article h2.notes-sec ~ p {
   function hideFn() { fnPop.style.display = 'none'; }
   document.addEventListener('click', function (e) {
     if (!e.target.closest || !e.target.closest('#fn-pop')) hideFn();
+  });
+
+  /* ---------- 插图灯箱 ---------- */
+  var viewer = $('img-viewer'), viewerImg = $('img-viewer-img');
+  content.addEventListener('click', function (e) {
+    var img = e.target.closest ? e.target.closest('article img') : null;
+    if (!img) return;
+    viewerImg.src = img.src;
+    viewerImg.alt = img.alt || '';
+    viewer.classList.add('open');
+  });
+  viewer.addEventListener('click', function () { viewer.classList.remove('open'); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && viewer.classList.contains('open')) viewer.classList.remove('open');
   });
 
   /* ---------- 检索 ---------- */
